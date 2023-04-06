@@ -1,0 +1,13 @@
+# aws configure
+Use the command to set up your aws cli configurations on your pc.
+# aws s3 mb s3://bucket-name
+Creating the name of your aws s3 bucket
+# aws s3 ls
+shows the information about the bucket that is date and time of creation and name of bucket
+# aws s3 cp file.txt s3://bucket-name
+uploading a file to your s3 bucket
+# aws s3 rm s3://bucket-name/file.txt
+It deletes the file you uploaded in the s3 bucket, but the bucket doesn't delete.
+# aws ec2 describe-instances
+it shows array of reservations in the aws ec2 
+# $ aws ec2 run-instances --image-id ami-0fc61db8544a617ed --instance-type t2.micro --key-name my-key-pair --security-group-ids sg-0123456789abcdef --subnet-id subnet-0123456789abcdef

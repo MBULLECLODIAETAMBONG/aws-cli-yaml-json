@@ -1,0 +1,97 @@
+
+TODAY'S LECTURES 6th April 2023
+
+- checking the version of aws
+aws --version
+
+Creating an IAM User on AWS Console
+-click on aws console and type on IAM and create an IAM user granting admin access and so on.
+-you can have multiple IAM user with tag(tag is optional, but makes you unique from others) 
+
+   Basic AWS CLI COMMAND
+
+# aws configure
+Use the command to set up your aws cli configurations on your pc.
+  
+          vs code gitbatch on terminal
+$ aws configure
+AWS Access Key ID [None]: AKIA4SGQZTW7QXOQ7Z7E
+AWS Secret Access Key [None]: A9kARgJfhLpy6AyG+gZQIAliiqqcUgFLQ1k+daqG
+Default region name [None]: us-east-1
+Default output format [None]: json
+
+# aws s3 mb s3://bucket-name
+Creating the name of your aws s3 bucket
+
+         vs code gitbatch on terminal
+$ aws s3 mb s3://clodia-bucket
+
+# aws s3 ls
+shows the information about the bucket that is date and time of creation and name of bucket
+
+         vs code gitbatch on terminal
+$ aws s3 ls
+2023-04-06 02:47:03 clodia-bucket
+
+# aws s3 cp file.txt s3://bucket-name
+uploading a file to your s3 bucket
+
+          vs code gitbatch on terminal
+$ aws s3 cp basic_aws_cli_command.txt s3://clodia-bucket
+upload: .\basic_aws_cli_command.txt to s3://clodia-bucket/basic_aws_cli_command.txt
+
+# aws s3 rm s3://bucket-name/file.txt
+It deletes the file in the s3 bucket, but the bucket doesn't delete.
+
+             vs code gitbatch on terminal
+$ aws s3 rm s3://clodia-bucket/basic_aws_cli_command.txt
+delete: s3://clodia-bucket/basic_aws_cli_command.txt
+
+# aws ec2 describe-instances
+it shows array of reservations in the aws ec2 instances
+
+             vs code gitbatch on terminal
+$ aws ec2 describe-instances
+{
+    "Reservations": []
+}
+
+
+ASSIGNMENT: Create an ec2 key pairs before creating an aws ec2 insatances (create an ec2 instances using commands)
+
+
+                        TODAY'S LECTURES 8th April 2023
+
+              UNDERSTANDING YAML AND JSON SYNTAX
+
+        vs code gitbatch on terminal
+$ aws configure
+AWS Access Key ID [None]: AKIA4SGQZTW7QXOQ7Z7E
+AWS Secret Access Key [None]: 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
+Default region name [us-east-1]:
+Default output format [json]:yaml
+
+$ aws cloudformation create-stack --stack-name my-mbulle-bucket --template-body file://s3_bucket.yaml
+- it creates a cloudformation stack 
+
+aws cloudformation describe-stacks --stack-name my-mbulle-bucket
+Stacks:
+- CreationTime: '2023-04-08T01:20:38.243000+00:00'
+  DisableRollback: false
+  DriftInformation:
+    StackDriftStatus: NOT_CHECKED
+  EnableTerminationProtection: false
+  NotificationARNs: []
+  RollbackConfiguration: {}
+  StackId: arn:aws:cloudformation:us-east-1:863726312895:stack/my-mbulle-bucket/aa74c790-d5aa-11ed-9e6e-0e74c23941d5
+  StackName: my-mbulle-bucket
+  StackStatus: CREATE_COMPLETE
+  Tags: []
+
+
+aws s3api delete-bucket --bucket my-mbulle-bucket
+- It deletes the Bucket you created
+
+aws cloudformation delete-stack --stack-name my-mbulle-bucket
+- It dletes the cloudformation stack
+

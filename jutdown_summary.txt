@@ -63,6 +63,16 @@ ASSIGNMENT: Create an ec2 key pairs before creating an aws ec2 insatances (creat
                         TODAY'S LECTURES 8th April 2023
 
               UNDERSTANDING YAML AND JSON SYNTAX
+              
+  aws configure
+Use the command to set up your aws cli configurations on your pc.
+  
+          vs code gitbatch on terminal
+$ aws configure
+AWS Access Key ID [AKIA4SGQZTW7QXOQ7Z7E]:
+AWS Secret Access Key [A9kARgJfhLpy6AyG+gZQIAliiqqcUgFLQ1k+daqG]:
+Default region name [us-east-1]:
+Default output format [None]: YMAL
 
         vs code gitbatch on terminal
 $ aws configure
